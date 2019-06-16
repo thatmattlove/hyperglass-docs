@@ -4,6 +4,7 @@ site_url: 'https://hyperglass.readthedocs.io'
 copyright: ''
 nav:
     - Home: 'index.md'
+    - Contributing: 'contributing.md'
     - Screenshots: 'screenshots.md'
     - Installation & Configuration:
       - '1. Download': 'installation/download.md'
@@ -24,8 +25,6 @@ nav:
       - 'Monitoring': 'extras/monitoring.md'
       - 'Securing Router Access': 'extras/securing-router-access.md'
       - 'Supported Device Types': 'extras/supported-device-types.md'
-    - Development:
-      - 'Introduction': 'development/index.md'
 # Theme Configuration
 theme:
   name: 'material'
