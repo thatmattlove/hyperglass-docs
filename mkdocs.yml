@@ -1,0 +1,49 @@
+site_name: 'hyperglass documentation'
+site_author: 'checktheroads | Matt Love'
+site_url: 'https://hyperglass.readthedocs.io'
+copyright: ''
+nav:
+    - Home: 'index.md'
+    - Screenshots: 'screenshots.md'
+    - Installation & Configuration:
+      - '1. Download': 'installation/download.md'
+      - '2. Install Dependencies': 'installation/dependencies.md'
+      - '3. Verify': 'installation/verify.md'
+      - '4. Configuration': 'installation/configuration.md'
+      - '5. Devices': 'installation/devices.md'
+      - '6. Branding': 'installation/branding.md'
+      - '7. Features': 'installation/features.md'
+      - '8. HTTP/WSGI': 'installation/wsgi.md'
+      - '9. Systemd Service': 'installation/systemd.md'
+      - '10. Reverse Proxy & SSL': 'installation/reverseproxy.md'
+    - 'Operations':
+      - 'Upgrading hyperglass': 'operations/upgrading.md'
+      - 'Clear the Cache': 'operations/clear-cache.md'
+      - 'Compile Sass': 'operations/compile-sass.md'
+    - Extras:
+      - 'Monitoring': 'extras/monitoring.md'
+      - 'Securing Router Access': 'extras/securing-router-access.md'
+      - 'Supported Device Types': 'extras/supported-device-types.md'
+    - Development:
+      - 'Introduction': 'development/index.md'
+# Theme Configuration
+theme:
+  name: 'material'
+  feature:
+    tabs: true
+  palette:
+    primary: 'white'
+    accent: 'teal'
+# Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.mark
+  - codehilite
+  - toc:
+      permalink: true
+      toc_depth: 1-3
+# Social Links
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/checktheroads/hyperglass'
