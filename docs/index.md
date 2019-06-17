@@ -1,4 +1,4 @@
-<img src="/assets/hyperglass-dark.png" width=300></img>
+<img src="assets/hyperglass-dark.png" width=300></img>
 
 # What is hyperglass?
 
