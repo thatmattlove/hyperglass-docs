@@ -32,6 +32,7 @@ theme:
     tabs: true
   logo:
     icon: 'visibility'
+  favicon: 'assets/favicon.ico'
   palette:
     primary: 'white'
     accent: 'teal'
