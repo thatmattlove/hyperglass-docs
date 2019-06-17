@@ -46,7 +46,7 @@ blacklist = [
 
 When users attempt to query a matching host/prefix, they will receive the following error message by default:
 
-<img src="installation/assets/blacklist_error.png" style="width: 70%"></img>
+<img src="../assets/blacklist_error.png" style="width: 70%"></img>
 
 ## Site Parameters
 
@@ -74,8 +74,8 @@ Commands are separated first by network operating system, then by IP protocol:
 The following variables can be used in the command definitions.
 
 - `{target}` Maps to search box input.
-- `{src_addr_ipv4}` Maps to [src_addr_ipv4](installation/devices/#routers)
-- `{src_addr_ipv6}` Maps to [src_addr_ipv6](installation/devices/#routers)
+- `{src_addr_ipv4}` Maps to [src_addr_ipv4](../devices/#routers)
+- `{src_addr_ipv6}` Maps to [src_addr_ipv6](../devices/#routers)
 
 For `cisco_ios`, the default commands configuration is:
 
@@ -97,4 +97,4 @@ ping = "ping ipv6 {target} repeat 5 source {source}"
 traceroute = "traceroute ipv6 {target} timeout 1 probe 2 source {source}"
 ```
 
-`{source}` and `{target}` are formatted as the configured `src_addr_ipv4`/`src_addr_ipv6` parameters in [`devices.toml`](installation/devices) and query target, respectively.
+`{source}` and `{target}` are formatted as the configured `src_addr_ipv4`/`src_addr_ipv6` parameters in [`devices.toml`](../devices) and query target, respectively.

@@ -63,7 +63,7 @@ password = "$pbkdf2-sha256$29000$bI0xJqQUQoixtjZGSAnhvA$FM0oUc.Y3kuvl9ilQmMuULTD
 ```
 
 !!! warning "Security Warning"
-    These values are stored in plain text, so make sure the accounts are restricted. Instructions for creating restricted accounts on common platforms can be found [here](extras/securing-router-access).
+    These values are stored in plain text, so make sure the accounts are restricted. Instructions for creating restricted accounts on common platforms can be found [here](../../extras/securing-router-access).
 
 ## Proxies
 
@@ -79,7 +79,7 @@ When a proxy server is defined in the `[router]` table, the defined proxy name i
 | **address**     | IP address hyperglass will use to connect to the device.                                                                                                                                                                                                                               |
 | **username**    | Username for SSH authentication to the proxy server/jumpbox. SSH Key authentication is not yet supported.                                                                                                                                                                              |
 | **password**    | Plain text password for SSH authentication to the proxy server/jumpbox.                                                                                                                                                                                                                |
-| **type**        | Device type/vendor name as recognized by [Netmiko](https://github.com/ktbyers/netmiko). See [supported device types](extras/supported-device-types) for a full list.                                                                                                                   |
+| **type**        | Device type/vendor name as recognized by [Netmiko](https://github.com/ktbyers/netmiko). See [supported device types](../../extras/supported-device-types) for a full list.                                                                                                                   |
 | **ssh_command** | Command used to initiate an SSH connection _from_ the proxy server to the target device. `{username}` will map to the target device (router) username as defined in its associated credential mapping. `{host}` will map to the target device IP address as defined in `devices.toml`. |
 
 #### Example
