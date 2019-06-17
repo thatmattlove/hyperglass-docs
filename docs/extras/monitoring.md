@@ -6,4 +6,4 @@ Every successful transaction increments a Prometheus [Counter](https://prometheu
 
 This Grafana dashboard model is located at `hyperglass/grafana.json`.
 
-<img src="extras/assets/grafana.png" style="width: 100%"></img>
+<img src="../assets/grafana.png" style="width: 100%"></img>

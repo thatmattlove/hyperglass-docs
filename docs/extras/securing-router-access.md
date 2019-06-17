@@ -1,6 +1,6 @@
 More than likely, you'll want to "lock down" what commands can be executed with the credentials you've provided in `hyperglass/hyperglass/configuration/devices.toml`. It is **strongly** recommended to use a low privilege read only account and not your full administrator account. Even though Hyperglass is coded to only run certain commands to begin with, you're more than likely still exposing the server Hyperglass runs on to the internet, and on that server is a plain text file with your router's credentials in it. Take precautions.
 
-3# Cisco IOS
+## Cisco IOS
 
 On Cisco IOS, **parser views** are the recommended tool to restrict access. Basic instructions for configuring Cisco IOS parser views for the default enabled query types are below:
 

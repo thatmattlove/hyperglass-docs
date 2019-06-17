@@ -43,7 +43,7 @@ The footer text itself can be customized by adding a [Markdown](https://github.c
 
 | Key Name | Type    | Default Value | Function                                   |
 | -------- | ------- | ------------- | ------------------------------------------ |
-| `enable` | Boolean | `true`        | Enables or disables the PeeringDB link in the upper right corner. If `true`, the [primary_asn](#primary_asn) will be automatically used to create the URL to your ASN's PeeringDB entry. |
+| `enable` | Boolean | `true`        | Enables or disables the PeeringDB link in the upper right corner. If `true`, the [primary_asn](../configuration/#primary_asn) will be automatically used to create the URL to your ASN's PeeringDB entry. |
 
 ### Site Text
 `[branding.text]`
