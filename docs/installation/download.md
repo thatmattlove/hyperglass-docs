@@ -15,7 +15,7 @@ Due to the extensive use of Python's [f-string](https://docs.python.org/3/refere
 ```
 
 ##### Redis
-[Redis](https://redis.io/) must be installed and running prior to starting hyperglass. Redis is used to cache hyperglass query output, as well as store rate-limiting data for the [Rate Limiting](installation/features/#rate-limiting) feature.
+[Redis](https://redis.io/) must be installed and running prior to starting hyperglass. Redis is used to cache hyperglass query output, as well as store rate-limiting data for the [Rate Limiting](../features/#rate-limiting) feature.
 
 ```console
 # apt install -y redis

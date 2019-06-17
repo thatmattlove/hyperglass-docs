@@ -2,7 +2,7 @@ More than likely, you'll be exposing Hyperglass to the internet. It is recommend
 
 #### Example
 
-The below Nginx example assumes the default [Gunicorn](installation/wsgi) settings are used.
+The below Nginx example assumes the default [Gunicorn](../wsgi) settings are used.
 
 ```nginx
 geo $not_prometheus_hosts {
@@ -101,4 +101,4 @@ server {
 - NGINX: [Using Free Let’s Encrypt SSL/TLS Certificates with NGINX](https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/)
 
 
-The `/metrics` block will ensure that hosts defined in the `geo $not_prometheus_hosts` directive are allowed to reach the `/metrics` URI, but that any other hosts will have the a request for `/metrics` rewritten to `/getyourownmetrics`, which will render the 404 error page.
+The `/metrics` block will ensure that hosts defined in the `geo $not_prometheus_hosts` directive are allowed to reach the `/metrics` URI, which exposes [Prometheus](../../extras/monitoring) metrics, but that any other hosts will have the a request for `/metrics` rewritten to `/getyourownmetrics`, which will render the 404 error page.
