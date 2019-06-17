@@ -30,9 +30,14 @@ theme:
   name: 'material'
   feature:
     tabs: true
+  logo:
+    icon: 'search'
   palette:
     primary: 'white'
     accent: 'teal'
+  font:
+    text: 'Nunito'
+    code: 'Fira Mono'
 # Extensions
 markdown_extensions:
   - admonition
@@ -46,3 +51,6 @@ extra:
   social:
     - type: 'github'
       link: 'https://github.com/checktheroads/hyperglass'
+# Custom CSS
+extra_css:
+  - 'stylesheets/extra.css'
