@@ -63,7 +63,7 @@ To accomplish this, hyperglass makes use of a Redis database, with a stringified
 
 If enabled, the prefix length of BGP Route queries must be shorter than the `max_prefix_length_ipv4` and `max_prefix_length_ipv6` parameters. For example, a BGP Route query for `192.0.2.0/25` would result in the following error message:
 
-<img src="assets/max_prefix_error.png" style="width: 70%"></img>
+<img src="installation/assets/max_prefix_error.png" style="width: 70%"></img>
 
 
 | Key Name | Type    | Default Value | Function                                                            |
