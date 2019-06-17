@@ -26,7 +26,7 @@ Some platforms (namely Cisco IOS) are unable to perform a BGP lookup by IPv6 hos
 
 If a user attempts to query a device requiring IPv6 lookups in CIDR format with an IPv6 host address, the following message will be displayed:
 
-<img src="/assets/requires_ipv6_cidr.png" style="width: 70%"></img>
+<img src="assets/requires_ipv6_cidr.png" style="width: 70%"></img>
 
 ### Blacklist
 
@@ -46,7 +46,7 @@ blacklist = [
 
 When users attempt to query a matching host/prefix, they will receive the following error message by default:
 
-<img src="/assets/blacklist_error.png" style="width: 70%"></img>
+<img src="assets/blacklist_error.png" style="width: 70%"></img>
 
 ## Site Parameters
 
@@ -97,4 +97,4 @@ ping = "ping ipv6 {target} repeat 5 source {source}"
 traceroute = "traceroute ipv6 {target} timeout 1 probe 2 source {source}"
 ```
 
-`{source}` and `{target}` are formatted as the configured `src_addr_ipv4`/`src_addr_ipv6` parameters in [`devices.toml`](/installation/devices) and query target, respectively.
+`{source}` and `{target}` are formatted as the configured `src_addr_ipv4`/`src_addr_ipv6` parameters in [`devices.toml`](installation/devices) and query target, respectively.

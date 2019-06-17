@@ -4,7 +4,7 @@ From `hyperglass/hyperglass/configuration/configuration.toml`
 
 ## Rate Limiting
 
-hyperglass supports configurable rate limiting of both site loads and queries. By default, users are able to reach the site up to 60 times per minute, and submit up to 5 queries per minute. When the site limit is reached, users are directed to a separate error page until the timer expires. When the query limit is reached, an error message is displayed, and no further queries are allowed until the timer expires. Both of these limits are configurabale in `configuration.toml`. See [here](/configuration/features/#rate-limiting) for more information.
+hyperglass supports configurable rate limiting of both site loads and queries. By default, users are able to reach the site up to 60 times per minute, and submit up to 5 queries per minute. When the site limit is reached, users are directed to a separate error page until the timer expires. When the query limit is reached, an error message is displayed, and no further queries are allowed until the timer expires. Both of these limits are configurabale in `configuration.toml`. See [here](configuration/features/#rate-limiting) for more information.
 
 hyperglass uses [Flask-Limiter](https://github.com/alisaifee/flask-limiter) to handle application rate limiting, and a Redis database as the backend storage mechanism. Redis is used so that the Flask-Limiter state can be tracked across multiple WSGI workers.
 
@@ -63,7 +63,7 @@ To accomplish this, hyperglass makes use of a Redis database, with a stringified
 
 If enabled, the prefix length of BGP Route queries must be shorter than the `max_prefix_length_ipv4` and `max_prefix_length_ipv6` parameters. For example, a BGP Route query for `192.0.2.0/25` would result in the following error message:
 
-<img src="/assets/max_prefix_error.png" style="width: 70%"></img>
+<img src="assets/max_prefix_error.png" style="width: 70%"></img>
 
 
 | Key Name | Type    | Default Value | Function                                                            |
