@@ -55,3 +55,7 @@ extra:
 # Custom CSS
 extra_css:
   - 'stylesheets/extra.css'
+# Google Analytics
+google_analytics:
+  - 'UA-126189890-3'
+  - 'auto'
