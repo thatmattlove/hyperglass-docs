@@ -31,7 +31,7 @@ theme:
   feature:
     tabs: true
   logo:
-    icon: 'search'
+    icon: 'visibility'
   palette:
     primary: 'white'
     accent: 'teal'
