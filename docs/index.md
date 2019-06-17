@@ -23,4 +23,4 @@ hyperglass was created with the lofty goal of benefiting the internet community 
 
 # Get Started
 
-See the [installation guide](/installation/download) to get started.
+See the [installation guide](installation/download) to get started.
