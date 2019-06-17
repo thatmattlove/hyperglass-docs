@@ -7,9 +7,7 @@ hyperglass/configuration/
 └── devices.toml
 ```
 
-## Site Parameters
-
-Global hyperglass parameters
+## Global hyperglass Parameters
 
 | Key Name             | Type    | Default Value                 | Function                                               |
 | -------------------- | ------- | ----------------------------- | ------------------------------------------------------ |
@@ -48,7 +46,7 @@ When users attempt to query a matching host/prefix, they will receive the follow
 
 <img src="../assets/blacklist_error.png" style="width: 70%"></img>
 
-## Site Parameters
+## General Parameters
 
 `[general]`
 
