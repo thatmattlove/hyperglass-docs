@@ -2,22 +2,22 @@
 
 ## Routers
 
-[router.'<name>']
+`[router.'<name>']`
 
 `'<name>'` should be your routers hostname, or another way of uniquely identifying the devie.
 
-| Parameter       | Function                                                                                                                                                                                                                                                                                    |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `address`       | IP address hyperglass will use to connect to the device.                                                                                                                                                                                                                                    |
-| `asn`           | ASN this device is a member of.                                                                                                                                                                                                                                                             |
-| `src_addr_ipv4` | Source IPv4 address used for ping and traceroute queries.                                                                                                                                                                                                                                   |
-| `src_addr_ipv6` | Source IPv6 address used for ping and traceroute queries.                                                                                                                                                                                                                                   |
-| `credential`    | Name of credential (username & password) used to authenticate with the device. See [Credentials](#credentials) for more information.                                                                                                                                                        |
-| `location`      | Name of location/POP where this device resides.                                                                                                                                                                                                                                             |
-| `display_name`  | Device name that will be shown to the end user on the main hyperglass page.                                                                                                                                                                                                                 |
-| `port`          | TCP port for SSH/HTTP connection to device.                                                                                                                                                                                                                                                 |
-| `type`          | Device type/vendor name as recognized by [Netmiko](https://github.com/ktbyers/netmiko). See [supported device types](../../extras/supported-device-types) for a full list. If using FRRouting and the [hyperglass-frr](https://github.com/checktheroads/hyperglass-frr) API, specify `frr`. |
-| `proxy`         | Name of SSH proxy/jumpbox, if any, used for connecting to the device. See [Proxies](#proxies) for more information. If not using a proxy, specify an empty string, i.e. `""`.                                                                                                               |
+| Parameter       | Function                                                                                                                                                                      |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `address`       | IP address hyperglass will use to connect to the device.                                                                                                                      |
+| `asn`           | ASN this device is a member of.                                                                                                                                               |
+| `src_addr_ipv4` | Source IPv4 address used for ping and traceroute queries.                                                                                                                     |
+| `src_addr_ipv6` | Source IPv6 address used for ping and traceroute queries.                                                                                                                     |
+| `credential`    | Name of credential (username & password) used to authenticate with the device. See [Credentials](#credentials) for more information.                                          |
+| `location`      | Name of location/POP where this device resides.                                                                                                                               |
+| `display_name`  | Device name that will be shown to the end user on the main hyperglass page.                                                                                                   |
+| `port`          | TCP port for SSH/HTTP connection to device.                                                                                                                                   |
+| `type`          | Device type/vendor name. See [supported device types](../../extras/supported-device-types) for a full list.                                                                   |
+| `proxy`         | Name of [SSH proxy/jumpbox](#proxies), if any, used for connecting to the device. If not using a proxy, specify an empty string, i.e. `""`. |
 
 #### Example
 
@@ -75,8 +75,8 @@ When a proxy server is defined in the `[router]` table, the defined proxy name i
 !!! warning "Security Warning"
     These values are stored in plain text, so make sure the accounts are restricted.
 
-| Parameter       | Function                                                                                                                                                                                                                                                                               |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parameter     | Function                                                                                                                                                                                                                                                                               |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `address`     | IP address hyperglass will use to connect to the device.                                                                                                                                                                                                                               |
 | `username`    | Username for SSH authentication to the proxy server/jumpbox. SSH Key authentication is not yet supported.                                                                                                                                                                              |
 | `password`    | Plain text password for SSH authentication to the proxy server/jumpbox.                                                                                                                                                                                                                |
