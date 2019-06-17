@@ -26,7 +26,7 @@ Some platforms (namely Cisco IOS) are unable to perform a BGP lookup by IPv6 hos
 
 If a user attempts to query a device requiring IPv6 lookups in CIDR format with an IPv6 host address, the following message will be displayed:
 
-<img src="installation/assets/requires_ipv6_cidr.png" style="width: 70%"></img>
+<img src="assets/requires_ipv6_cidr.png" style="width: 70%"></img>
 
 ### Blacklist
 
