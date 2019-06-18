@@ -26,7 +26,7 @@ Configuration paramters for rate limiting the number of queries per visitor.
 | `period`  | String  | `"minute"`                                                                            | Sets the time period to which `rate` applies.                                                                                                              |
 | `message` | String  | `"Query limit of {rate} per minute reached. Please wait one {period} and try again."` | Message presented to the user when the query limit is reached. `{rate_limit_query}` will be formatted as the `[features.rate_limit.query.rate]` parameter. |
 
-#### By Site Site Visit
+#### By Site Visit
 `[features.rate_limit.site]`
 
 Configuration parameters for rate limiting the number of site visits per visitor.
