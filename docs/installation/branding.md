@@ -173,7 +173,14 @@ Each example file can be renamed to exclude the `.example` file extension, and m
 
 ### Detailed Help
 
-Currently, the BGP Community and BGP AS Path query types support an additional detailed help modal.
+Currently, the BGP Community and BGP AS Path query types support an additional detailed help modal. Similar to the above Help Dropdown structure, the detailed help text can be customized by modifying the below files:
+
+```
+hyperglass/render/templates/info/details/
+├── bgp_aspath.md.example
+├── bgp_community.md.example
+└── footer.md.example
+```
 
 The BGP Community detailed help is intended to display your organizations community structure so your hyperglass users know what communities to query. By default, this is populated with example information and should be changed to include your organization's BGP Community info, or disabled by adding a `hyperglass/hyperglass/render/templates/info/bgp_community.md` file and removing the `{{ info["bgp_community"]["link"] }}` line.
 
