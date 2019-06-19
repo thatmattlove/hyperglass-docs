@@ -8,8 +8,8 @@ The intent behind the the [BSD 3-Clause Clear License](https://choosealicense.co
 
 ### PEP8
 
-hyperglass is arrogantly maintained with a 10/10 Pylint rating, with minimal exceptions made (and documented in `.pylintrc`). Pull requests will only be accepted if the modified codebase maintains this rating.
+hyperglass is arrogantly maintained with a 10/10 [Pylint](https://www.pylint.org/) rating, with minimal exceptions made (and documented in `.pylintrc`). Pull requests will fail in CI if the code is rated below 10/10.
 
 ### Code Style
 
-hyperglass is developed in [Atom](https://atom.io/), with automatic [Black](https://github.com/python/black) formatting. Additionally, all commits will be automatically and unconditionally Black formatted via CI.
+All Python code in hyperglass must pass [Black](https://github.com/python/black) formatting standards. hyperglass is developed in [Atom](https://atom.io/) with automatic Black formatting, but the [`black` Python package](https://pypi.org/project/black/) can also be used. Pull requests will fail in CI if the code is not black-formatted.
