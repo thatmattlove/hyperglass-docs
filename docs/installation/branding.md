@@ -10,9 +10,10 @@
 }
 </style>
 
+## Site Parameters
+
 From `hyperglass/hyperglass/configuration/configuration.toml` `[branding]` table.
 
-## Site Parameters
 `[branding]`
 
 | Key Name    | Type   | Default Value | Function                                                       |
@@ -28,8 +29,8 @@ From `hyperglass/hyperglass/configuration/configuration.toml` `[branding]` table
 
 The footer text itself can be customized by adding a [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) document to `hyperglass/hyperglass/render/templates/info/details/footer.md`. The example file, `footer.md.example`, can be copied to `footer.md` and modified. All Markdown files in this directory are excluded from change control and will not be overwritten when hyperglass is updated.
 
-!!! note "Markdown Files"
-    The custom content Markdown files *must* have TOML Front Matter, even if there are no attributes used.
+!!! danger "TOML Front Matter Required"
+    The TOML Front Matter in the default example files is **required**, even if no attributes are used. If it is not present, the rendering backend will fail to render the main page.
 
 ###  Credit
 `[branding.credit]`
@@ -151,3 +152,29 @@ The values are passed as a Jinja2 variable to generate `hyperglass/hyperglass/st
 | -------- | ------ | ----------------------------------------------------- | --------------------------------------------------------------------- |
 | `name`   | String | `"Fira Mono"`                                         | Sets the web font name for the monospace/code/preformatted text font. |
 | `url`    | String | `"https://fonts.googleapis.com/css?family=Fira+Mono"` | Sets the web font URL for the monospace/code/preformatted text font.  |
+
+## Help Dropdown
+
+The text displayed in the [help dropdown](../../screenshots/#help-dropdown) can be easily customized. For each query type, there is a corresponding [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) example file located at `hyperglass/hyperglass/render/templates/info`:
+
+```
+hyperglass/hyperglass/render/templates/info/
+├── bgp_aspath.md.example
+├── bgp_community.md.example
+├── bgp_route.md.example
+├── ping.md.example
+└── traceroute.md.example
+```
+
+Each example file can be renamed to exclude the `.example` file extension, and modified accordingly.
+
+!!! danger "TOML Front Matter Required"
+    The TOML Front Matter in the default example files is **required**, even if no attributes are used. If it is not present, the rendering backend will fail to render the main page.
+
+### Detailed Help
+
+Currently, the BGP Community and BGP AS Path query types support an additional detailed help modal.
+
+The BGP Community detailed help is intended to display your organizations community structure so your hyperglass users know what communities to query. By default, this is populated with example information and should be changed to include your organization's BGP Community info, or disabled by adding a `hyperglass/hyperglass/render/templates/info/bgp_community.md` file and removing the `{{ info["bgp_community"]["link"] }}` line.
+
+The BGP AS Path detailed help is intended to display your supported AS Path patterns. By default, this is populated with the default AS Path regex pattern, as defined in the [BGP AS Path feature configuration](../features/#bgp-as-path). If you modify the default pattern to include additional allowed query patterns, you should also modify the BGP AS Path detailed help file to reflect your changes.
