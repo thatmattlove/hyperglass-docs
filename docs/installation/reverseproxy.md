@@ -1,8 +1,8 @@
-More than likely, you'll be exposing Hyperglass to the internet. It is recommended practice to run most web applications behind a reverse proxy, such as Nginx, Apache, Caddy, etc. This example uses Nginx, but can easily be adapted to other reverse proxy applications if you prefer.
+More than likely, you'll be exposing Hyperglass to the internet, therefore it is recommended practice to run most web applications behind a reverse proxy, such as Nginx, Apache, Caddy, etc. Additionally, the hyperglass WSGI server, [Gunicorn](../wsgi), requires the use of a reverse proxy. This example uses [NGINX](https://www.nginx.com/), but can easily be adapted to other reverse proxy applications if you prefer.
 
-#### Example
+### Examples
 
-The below Nginx example assumes the default [Gunicorn](../wsgi) settings are used.
+#### NGINX (HTTP)
 
 ```nginx
 geo $not_prometheus_hosts {
@@ -43,6 +43,8 @@ server {
 
 }
 ```
+
+#### NGINX (HTTPS)
 
 This configuration, in combination with the default Gunicorn configuration, makes the hyperglass front-end dual stack IPv4/IPv6 capable. To add SSL support, Nginx can be easily adjusted to terminate front-end SSL connections:
 
@@ -95,10 +97,13 @@ server {
 }
 ```
 
+### SSL
+
 [Let's Encrypt](https://letsencrypt.org/) provides automatic (and free) SSL certificate generation and renewal. There are a number of guides available on how to integrate Let's Encrypt with Nginx (or your reverse proxy of choice). Some examples:
 
 - Digital Ocean: [How To Secure Nginx with Let's Encrypt on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04)
 - NGINX: [Using Free Let’s Encrypt SSL/TLS Certificates with NGINX](https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/)
 
+### Prometheus Metrics
 
 The `/metrics` block will ensure that hosts defined in the `geo $not_prometheus_hosts` directive are allowed to reach the `/metrics` URI, which exposes [Prometheus](../../extras/monitoring) metrics, but that any other hosts will have the a request for `/metrics` rewritten to `/getyourownmetrics`, which will render the 404 error page.
