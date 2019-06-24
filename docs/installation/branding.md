@@ -57,9 +57,10 @@ The footer text itself can be customized by adding a [Markdown](https://github.c
 
 `title_mode` Options:
 
+-   `"all"` Displays Title, and Subtitle text, and logo defined in `logo_path`.
 -   `"logo_only"` Hides Title and Subtitle text, displays logo defined in `logo_path`.
--   `"both"` Displays both Title and Subtitle text defined in `title` and `subtitle` parameters.
--   `"hide_subtitle"` Displays only the Title text defined in the `title` parameter.
+-   `"text_only"` Hides logo, displays Title and Subtitle text.
+-   `"logo_title"` Displays Title, and logo defined in `logo_path`.
 
 | Key Name            | Type   | Default Value                         | Function                                                                             |
 | ------------------- | ------ | ------------------------------------- | ------------------------------------------------------------------------------------ |
