@@ -120,6 +120,7 @@ const siteConfig = {
   // Algolia Search
   algolia: {
     apiKey: '028921cd1db90d30c148b4963a4816f6',
+    indexName: 'hyperglass-docs',
     appId: 'GTIVC5R7E6',
   },
 
