@@ -1,0 +1,29 @@
+{
+  "docs": {
+    "Getting Started": [
+      "installation",
+      "configuration",
+      {
+        "type": "subcategory",
+        "label": "Configuration File Reference",
+        "ids": [
+          "hyperglass-yaml",
+          "devices-yaml",
+          "commands-yaml"
+        ]
+      },
+      "front-end-and-verification",
+      "production"
+    ],
+    "Operations": [
+      "upgrading",
+      "clearing-the-cache",
+      "updating-assets"
+    ],
+    "Extras": [
+      "metrics",
+      "securing-device-access",
+      "supported-devices"
+    ]
+  }
+}

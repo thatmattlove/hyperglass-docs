@@ -1,0 +1,37 @@
+/* your custom css */
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Code|Nunito:400,600&display=swap');
+
+body {
+    font-family: $serifFamily !important;
+    font-size: 0.85em;
+}
+
+code {
+    font-family: $monoFamily !important;
+    font-size: 0.8em;
+}
+
+.blockImage img {
+    max-height: 39px;
+}
+
+.productShowcaseSection p {
+    max-width: 1000px;
+}
+
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
