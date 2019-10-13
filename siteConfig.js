@@ -119,8 +119,8 @@ const siteConfig = {
 
   // Algolia Search
   algolia: {
-    indexName: '40e945b5c9b259b9a6f73b43a0a0bba1',
-    apiKey: '028921cd1db90d30c148b4963a4816f6',
+    indexName: 'hyperglass',
+    apiKey: '40e945b5c9b259b9a6f73b43a0a0bba1',
   },
 
   markdownPlugins: [
