@@ -23,7 +23,7 @@ const users = [
 ];
 
 const siteConfig = {
-  customDocsPath: path.basename(__dirname) + '/docs',
+  customDocsPath: `${path.basename(__dirname)}/docs`,
 
   title: 'hyperglass', // Title for your website.
   tagline: 'A modern, customizable network looking glass written in Python 3',
@@ -119,8 +119,8 @@ const siteConfig = {
 
   // Algolia Search
   algolia: {
+    indexName: '40e945b5c9b259b9a6f73b43a0a0bba1',
     apiKey: '028921cd1db90d30c148b4963a4816f6',
-    appId: 'GTIVC5R7E6',
   },
 
   markdownPlugins: [
