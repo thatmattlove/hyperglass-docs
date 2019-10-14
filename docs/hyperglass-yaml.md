@@ -146,42 +146,191 @@ Sets the monospace font, used for displaying device output in the results box.
 
 Enables or disables the help menu footer object.
 
+### `logo`
+
+#### `favicons`
+* Type: **String**
+* Default: `'ui/images/favicons/'`
+
+Sets the path to the favicons directory. For full browser and platform compatibility, it is recommended to use [RealFaviconGenerator](https://realfavicongenerator.net/) and place all the generated files in static/custom/images/favicon/ (and update the favicons parameter).
+
+#### `path`
+* Type: **String**
+* Default: `'ui/images/hyperglass-dark.png'`
+
+Sets the path to the logo file. This file can be any browser-compatible format, such as JPEG, PNG, or SVG.
+
+#### `width`
+* Type: **Integer**
+* Default: `384`
+
+Sets the width of the logo defined in the logo `path` parameter. This is helpful if your logo is a dimension that doesn't quite work with the logo container on the page.
+
+### `peeringdb`
+
+#### `enable`
+
+* Type: **Boolean**
+* Default: `true`
+
+Enables or disables the PeeringDB link in the footer. If set to `true`, the [`primary_asn`](#primary_asn) from the [`general`](#general) section will be automatically used to create the URL to your ASN's PeeringDB entry.
+
+### `site_title`
+
+* Type: **String**
+* Default: `'hyperglass'`
+
+Sets the [`<title>`](https://www.w3schools.com/tags/tag_title.asp) tag in the `<head>` section of the page.
+
+### `terms`
+
+#### `enable`
+
+* Type: **Boolean**
+* Default: `true`
+
+Enables or disables the Terms & Conditions popup item in the footer.
+
+### `text`
+
+#### `bgp_aspath`
+* Type: **String**
+* Default: `'BGP AS Path'`
+
+Sets display text for the BGP AS Path feature.
+
+#### `bgp_community`
+* Type: **String**
+* Default: `'BGP Community'`
+
+Sets display text for the BGP AS Community feature.
+
+#### `bgp_route`
+* Type: **String**
+* Default: `'BGP Route'`
+
+Sets display text for the BGP Route feature.
+
+#### `ping`
+* Type: **String**
+* Default: `'Ping'`
+
+Sets display text for the Ping feature.
+
+#### `traceroute`
+* Type: **String**
+* Default: `'Traceroute'`
+
+Sets display text for the Traceroute feature.
+
+#### `title_mode`
+* Type: **String**
+* Default: `'logo_only'`
+
+Sets the "mode" for the title/heading area above the main form. Accepted values are:
+
+* `'logo_only'` - shows only the logo defined in the [`logo`](#logo) section.
+* `'text_only'` - shows the `title`, and `subtitle` defined below.
+* `'logo_title'` - shows the logo defined in the [`logo`](#logo) section, as well as the `title` defined below.
+* `'all'` - shows the logo defined in the [`logo`](#logo) section, and both the `title` and `subtitle` defined below.
+
+#### `title`
+* Type: **String**
+* Default: `'hyperglass'`
+
+If `title_mode` is set to `text_only` or `all`, this text will be the larger of the two text blocks. If `title_mode` is set to `logo_title`, this text will be the only text displayed, and will be slightly smaller. If `title_mode` is set to `logo_only`, this text will not be shown.
+
+#### `subtitle`
+* Type: **String**
+* Default: `'AS{primary_asn}'`
+
+If `title_mode` is set to `text_only` or `all`, this text will be the smaller of the two text blocks. If `title_mode` is set to `logo_only` or `logo_title`, this text will not be shown.
+
+#### `terms`
+* Type: **String**
+* Default: `'Terms'`
+
+Sets the display text for the Terms & Conditions footer item.
+
+#### `peeringdb`
+* Type: **String**
+* Default: `'PeeringDB'`
+
+Sets the display text for the PeeringDB footer item.
+
+#### `info`
+* Type: **String**
+* Default: `'Help'`
+
+Sets the display text for the Help footer item.
+
+#### `query_location`
+* Type: **String**
+* Default: `'Location'`
+
+Sets the display text for the Query Location field.
+
+#### `query_target`
+* Type: **String**
+* Default: `'Target'`
+
+Sets the display text for the Query Target field.
+
+#### `query_type`
+* Type: **String**
+* Default: `'Query Type'`
+
+Sets the display text for the Query Type field.
+
+#### `query_vrf`
+* Type: **String**
+* Default: `'Routing Table'`
+
+Sets the display text for the VRF field.
+
+#### `error404`
+Options for the 404 error page, displayed when someone tries to visit a URI that doesn't exist. For example "lg.as65000.net/fake".
+
+##### `button`
+* Type: **String**
+* Default: `'Home'`
+
+Sets the display text for the button on the 404 error page.
+
+##### `subtitle`
+* Type: **String**
+* Default: `'{uri} isn't a thing.'`
+
+Sets the subtitle on the 404 error page. `{uri}` maps to the URI that was attempted and not found.
+
+##### `title`
+* Type: **String**
+* Default: `'Error'`
+
+Sets the title on the 404 error page.
+
+#### `error500`
+Options for the 500 error page, displayed when general server errors occur.
+
+##### `button`
+* Type: **String**
+* Default: `'Home'`
+
+Sets the display text for the button on the 500 error page.
+
+##### `subtitle`
+* Type: **String**
+* Default: `'Something went wrong.'`
+
+Sets the subtitle on the 500 error page.
+
+##### `title`
+* Type: **String**
+* Default: `'Error'`
+
+Sets the title on the 500 error page.
+
 <!-- 
-#   logo:
-#     favicons: ui/images/favicons/
-#     path: ui/images/hyperglass-dark.png
-#     width: 384
-#   peering_db:
-#     enable: true
-#   site_name: hyperglass
-#   terms:
-#     enable: true
-#   text:
-#     bgp_aspath: BGP AS Path
-#     bgp_community: BGP Community
-#     bgp_route: BGP Route
-#     error404:
-#       button: Home
-#       subtitle: '{uri} isn''t a thing'
-#       title: Error
-#     error500:
-#       button: Home
-#       subtitle: Something Went Wrong
-#       title: Error
-#     error504:
-#       message: Unable to reach {target}
-#     info: Help
-#     peeringdb: PeeringDB
-#     ping: Ping
-#     query_location: Location
-#     query_target: Target
-#     query_type: Query Type
-#     subtitle: AS{primary_asn}
-#     terms: Terms
-#     title: hyperglass
-#     title_mode: logo_only
-#     traceroute: Traceroute
-#     vrf: Routing Table
 # features:
 #   bgp_aspath:
 #     enable: true
