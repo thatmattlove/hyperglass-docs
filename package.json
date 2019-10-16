@@ -1,20 +1,32 @@
 {
+  "name": "hyperglass-docs",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "examples": "docusaurus-examples",
-    "start": "docusaurus-start",
-    "build": "docusaurus-build",
-    "publish-gh-pages": "docusaurus-publish",
-    "write-translations": "docusaurus-write-translations",
-    "version": "docusaurus-version",
-    "rename-version": "docusaurus-rename-version"
-  },
-  "devDependencies": {
-    "docusaurus": "^1.13.0",
-    "eslint": "^6.5.1",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "remarkable-admonitions": "^0.2.1"
+    "@docusaurus/core": "^2.0.0-alpha.27",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.27",
+    "classnames": "^2.2.6",
+    "react": "^16.8.4",
+    "react-admonitions": "^2.0.0",
+    "react-dom": "^16.8.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

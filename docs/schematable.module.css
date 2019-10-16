@@ -1,0 +1,17 @@
+/* schematable.module.css */
+
+table thead tr th {
+  text-align: left;
+}
+
+.wrapnormal > table > tbody > tr > td {
+  white-space: normal !important;
+}
+
+table tbody tr td:nth-child(n + 1):nth-child(-n + 2) {
+  white-space: nowrap;
+}
+
+table tbody tr td:nth-child(3) {
+  font-size: small;
+}
