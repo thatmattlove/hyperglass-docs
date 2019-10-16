@@ -4,8 +4,8 @@ table thead tr th {
   text-align: left;
 }
 
-.wrapnormal > table > tbody > tr > td {
-  white-space: normal !important;
+.wrapnormal table tbody tr td:nth-child(n + 1):nth-child(-n + 2) {
+  white-space: normal;
 }
 
 table tbody tr td:nth-child(n + 1):nth-child(-n + 2) {

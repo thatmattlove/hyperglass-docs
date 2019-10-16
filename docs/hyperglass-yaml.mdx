@@ -415,7 +415,7 @@ features:
   rate_limit:
     query:
       button: "Try Again"
-      message: Query limit of {rate} per {period} reached. Please wait one minute and try again."
+      message: "Query limit of {rate} per {period} reached. Please wait one minute and try again."
       period: minute
       rate: 5
       title: "Query Limit Reached"
@@ -428,23 +428,49 @@ features:
       title: "Limit Reached"
 ```
 
-<!--
-# messages:
-#   acl_denied: '{target} is a member of {denied_network}, which is not allowed.'
-#   acl_not_allowed: '{target} is not allowed.'
-#   authentication_error: Authentication error occurred.
-#   connection_error: 'Error connecting to {device_name}: {error}'
-#   directed_cidr: '{query_type} queries can not be in CIDR format.'
-#   feature_not_enabled: '{feature} is not enabled for {device_name}.'
-#   general: Something went wrong.
-#   invalid_field: '{input} is an invalid {field}.'
-#   invalid_input: '{target} is not a valid {query_type} target.'
-#   max_prefix: Prefix length must be shorter than /{max_length}. {target} is too specific.
-#   no_input: '{field} must be specified.'
-#   no_matching_vrfs: No VRFs Match
-#   no_output: No output.
-#   noresponse_error: No response.
-#   request_timeout: Request timed out.
-#   requires_ipv6_cidr: '{device_name} requires IPv6 BGP lookups to be in CIDR notation.'
-#   vrf_not_associated: VRF {vrf_name} is not associated with {device_name}.
--->
+## messages
+
+Virtually every user-facing message can be overriden if desired. Each of the variables between brackets (e.g. `{variable}`), the variables listed in the default value are the only variables available for the respective message, but can be reused should you wish to override the message. Any variable can be omitted from the message if desired.
+
+| Field                                                  | Default                                                                                                                                  | Description                                                                                            |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| <FieldName name="acl_denied" type="string"/>           | <FieldDefaultBlock language="python" type="string" value="{target} is a member of {denied_network}, which is not allowed."/>             | Displayed if a query target matches a configured deny action.                                          |
+| <FieldName name="acl_not_allowed" type="string"/>      | <FieldDefaultBlock language="python" type="string" value="{target} is not allowed."/>                                                    | Displayed if a query target does not match a configured allow action.                                  |
+| <FieldName name="authentication_error" type="string"/> | <FieldDefaultBlock language="python" type="string" value="Authentication error occurred."/>                                              | Displayed if authentication to a device fails.                                                         |
+| <FieldName name="connection_error" type="string"/>     | <FieldDefaultBlock language="python" type="string" value="Error connecting to {device_name}: {error}"/>                                  | Displayed if hyperglass is unable to connect to a device.                                              |
+| <FieldName name="directed_cidr" type="string"/>        | <FieldDefaultBlock language="python" type="string" value="{query_type} queries can not be in CIDR format."/>                             | Displayed if a user attempts to query a CIDR prefix with the Ping or Traceroute features.              |
+| <FieldName name="feature_not_enabled" type="string"/>  | <FieldDefaultBlock language="python" type="string" value="{feature} is not enabled for {device_name}."/>                                 | Displayed if a user attempts to query a device with a disabled feature.                                |
+| <FieldName name="general" type="string"/>              | <FieldDefaultBlock language="python" type="string" value="Something went wrong."/>                                                       | Displayed if a general error occurs.                                                                   |
+| <FieldName name="invalid_field" type="string"/>        | <FieldDefaultBlock language="python" type="string" value="{input} is an invalid {field}."/>                                              | Displayed if the input for the selected query type is not the correct type (string/list/integer).      |
+| <FieldName name="invalid_input" type="string"/>        | <FieldDefaultBlock language="python" type="string" value="{target} is not a valid {query_type} target."/>                                | Displayed if the target for the selected query type is invalid.                                        |
+| <FieldName name="max_prefix" type="string"/>           | <FieldDefaultBlock language="python" type="string" value="Prefix length must be shorter than /{max_length}. {target} is too specific."/> | Displayed if the query target fails the [max-prefix](#max-prefix) check.                               |
+| <FieldName name="no_input" type="string"/>             | <FieldDefaultBlock language="python" type="string" value="{field} must be specified."/>                                                  | Displayed if no input is specified.                                                                    |
+| <FieldName name="no_matching_vrfs" type="string"/>     | <FieldDefaultBlock language="python" type="string" value="No VRFs in Common"/>                                                           | Displayed in the VRF dropdown field if the selected devices have no VRFs in common.                    |
+| <FieldName name="no_output" type="string"/>            | <FieldDefaultBlock language="python" type="string" value="No output."/>                                                                  | Displayed if a query is successful, but returns no output.                                             |
+| <FieldName name="noresponse_error" type="string"/>     | <FieldDefaultBlock language="python" type="string" value="No response."/>                                                                | Displayed if a query passes validation, but the device doesn't respond to a connection attempt.        |
+| <FieldName name="request_timeout" type="string"/>      | <FieldDefaultBlock language="python" type="string" value="Request timed out."/>                                                          | Displayed if the time to execute a query exceeds the [`request_timeout`](#general) value.              |
+| <FieldName name="requires_ipv6_cidr" type="string"/>   | <FieldDefaultBlock language="python" type="string" value="{device_name} requires IPv6 BGP lookups to be in CIDR notation."/>             | Displayed if a query target is an IPv6 host, but the device only supports IPv6 queries in CIDR format. |
+| <FieldName name="vrf_not_associated" type="string"/>   | <FieldDefaultBlock language="python" type="string" value="VRF {vrf_name} is not associated with {device_name}."/>                        | Displayed if a query VRF is specified for a device that is not configured with the specified VRF.      |
+
+#### Example
+
+```yaml
+messages:
+  acl_denied: "{target} is a member of {denied_network}, which is not allowed."
+  acl_not_allowed: "{target} is not allowed."
+  authentication_error: "Authentication error occurred."
+  connection_error: "Error connecting to {device_name}: {error}"
+  directed_cidr: "{query_type} queries can not be in CIDR format."
+  feature_not_enabled: "{feature} is not enabled for {device_name}."
+  general: "Something went wrong."
+  invalid_field: "{input} is an invalid {field}."
+  invalid_input: "{target} is not a valid {query_type} target."
+  max_prefix: "Prefix length must be shorter than /{max_length}. {target} is too specific."
+  no_input: "{field} must be specified."
+  no_matching_vrfs: "No VRFs in Common"
+  no_output: "No output."
+  noresponse_error: "No response."
+  request_timeout: "Request timed out."
+  requires_ipv6_cidr: "{device_name} requires IPv6 BGP lookups to be in CIDR notation."
+  vrf_not_associated: "VRF {vrf_name} is not associated with {device_name}."
+```

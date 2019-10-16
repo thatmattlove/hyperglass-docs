@@ -4,5 +4,146 @@ title: devices.yaml Reference
 sidebar_label: devices.yaml
 ---
 
-## TODO
+import Admonition from "react-admonitions";
+import { FieldName, FieldDefault, FieldDefaultBlock } from "./components.jsx";
+import styles from "./schematable.module.css";
 
+## credentials
+
+The `credentials` object contains a list of credentials:
+
+<div className={styles.wrapnormal}>
+
+| Field                                      | Description                                                                                      |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| <FieldName name="username" type="string"/> | SSH Username. If using FRRouting/BIRD, the username can be any arbitrary value (it is not used). |
+| <FieldName name="password" type="string"/> | SSH Password if using Netmiko/SSH, or API Key if using FRRouting/BIRD.                           |
+
+</div>
+
+#### Example
+
+```yaml
+credentials:
+  - credential: &credential1
+      username: "user1"
+      password: "secret1"
+  - credential: &credential2
+      username: "user2"
+      password: "secret2"
+```
+
+## proxies
+
+Each proxy object stores the connection parameters for an SSH proxy.
+
+When a proxy server is defined on a device, hyperglass will first initiate an SSH connection to the proxy, and then initiate a second connection to the target device from the proxy server. This can be helpful if you want to secure access to your routers.
+
+| Field                                            | Default                                         | Description                                                                                                     |
+| ------------------------------------------------ | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| <FieldName name="name" type="string"/>           | <FieldDefault value="None"/>                    | Name of the proxy server. Used internally to identify the proxy device.                                         |
+| <FieldName name="address" type="string"/>        | <FieldDefault value="None"/>                    | IP Address or hostname of the proxy server.                                                                     |
+| <FieldName name="port" type="integer"/>          | <FieldDefault type="integer" value="22"/>       | TCP port of the proxy server's SSH service.                                                                     |
+| <FieldName name="credential" type="credential"/> | <FieldDefault value="None"/>                    | [Credential](#credentials) object used to authenticate with the proxy server.                                   |
+| <FieldName name="nos" type="string"/>            | <FieldDefault type="string" value="linux_ssh"/> | Network Operating System of the proxy server (Netmiko naming scheme). Currently, only `linux_ssh` is supported. |
+
+#### Example
+
+```yaml
+proxies:
+    - proxy: &proxy1
+        name: "server01"
+        address: "10.11.6.204"
+        port: 22
+        credential: *cred_az01_ipam01
+        nos: "linux_ssh"
+```
+
+## networks
+
+Each network object defines a network (usually mapped to an ASN), which is used in the hyperglass GUI to group routers. A network object must be associated with a device.
+
+<div className={styles.wrapnormal}>
+
+| Field                                          | Description                                                                 |
+| ---------------------------------------------- | --------------------------------------------------------------------------- |
+| <FieldName name="name" type="string"/>         | Name of the network. Used internally to identify and reference the network. |
+| <FieldName name="display_name" type="string"/> | Name of the network that is shown in the hyperglass GUI.                    |
+
+</div>
+
+#### Example
+
+```yaml
+networks:
+  - network: &net_primary
+      name: "primary"
+      display_name: "Main Network"
+  - network: &net_secondary
+      name: "secondary"
+      display_name: "That Other Network"
+```
+
+## vrfs
+
+## routers
+
+<!--
+# VRFs
+vrfs:
+    - &vrf_default
+      name: default
+      display_name: Global
+      access_list:
+          - deny: 10.0.0.0/8
+          - deny: 192.168.0.0/16
+          - deny: 172.16.0.0/12
+          - allow: 0.0.0.0/0
+    - &vrf_customer_a
+      name: customer_a
+      display_name: Customer A
+      ipv4: &vrf_customer_a_ipv4
+          vrf_name: 1234_customer_a
+      ipv6: null
+      access_list:
+          - deny: 192.0.2.0/24
+          - allow: 10.0.0.0/8
+
+# Routers
+routers:
+    - name: router1
+      address: 10.0.0.1
+      network: *net_primary
+      credential: *credential1
+      location: nyc01
+      display_name: New York, NY
+      port: 22
+      nos: cisco_ios
+      vrfs:
+          - <<: *vrf_default
+            ipv4:
+                source_address: 192.0.2.1
+            ipv6:
+                source_address: 2604:c0c0::21:e1
+          - <<: *vrf_customer_a
+            ipv4:
+                <<: *vrf_customer_a_ipv4
+                source_address: 192.168.1.1
+      proxy: null
+    - name: router2
+      address: 10.0.0.2
+      network: *net_secondary
+      credential: *credential2
+      location: atl01
+      display_name: Atlanta, GA
+      port: 22
+      nos: juniper
+      vrfs:
+          - <<: *vrf_default
+            ipv4:
+                source_address: 199.34.92.3
+            ipv6:
+                source_address: 2604:c0c0::12:e1
+      proxy: *proxy1
+
+-->
