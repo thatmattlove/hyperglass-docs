@@ -2,7 +2,7 @@ hyperglass is maintained as a [Github project](https://github.com/checktheroads/
 
 ## License
 
-The intent behind the the [BSD 3-Clause Clear License](https://choosealicense.com/licenses/bsd-3-clause-clear/) is to ensure that anyone can use or modify Hyperglass in any way they wish, as long as credit and copyright notice is provied. If you have any questions about this, or wish to request any special permissions, please contact [matt@allroads.io](mailto:matt@allroads.io).
+The intent behind the the [BSD 3-Clause Clear License](https://choosealicense.com/licenses/bsd-3-clause-clear/) is to ensure that anyone can use or modify Hyperglass in any way they wish, as long as credit and copyright notice is provided. If you have any questions about this, or wish to request any special permissions, please contact [matt@allroads.io](mailto:matt@allroads.io).
 
 ## Guidelines
 
