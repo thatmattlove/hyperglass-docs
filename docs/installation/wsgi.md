@@ -1,4 +1,4 @@
-For production builds, you'll want to have a real WSGI front end instead of the built in Flask developer web server. While any WSGI could be used, [Gunicorn](https://gunicorn.org/) is the recommended and default WSGI for hyperglass.
+For production builds, you'll want to have a real WSGI front end instead of the built in Flask developer web server. While any WSGI could be used, [Gunicorn](https://gunicorn.org/) is the recommended WSGI and is included with hyperglass by default.
 
 !!! info "Alternative WSGIs"
     If you choose to use a different WSGI, be sure to look closely at `hyperglass/hyperglass/gunicorn_config.py.example` to properly replicate configurations for Prometheus metrics with multiple workers, single-worker Sass compilation, and Redis testing.
