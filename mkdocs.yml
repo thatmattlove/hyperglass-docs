@@ -48,10 +48,12 @@ markdown_extensions:
       permalink: true
       toc_depth: 1-3
 # Social Links
-extra:
-  social:
-    - type: 'github'
-      link: 'https://github.com/checktheroads/hyperglass/tree/v0'
+# extra:
+#   social:
+#     - type: 'github'
+#       link: 'https://github.com/checktheroads/hyperglass/tree/v0'
+repo_name: checktheroads/hyperglass
+repo_url: https://github.com/checktheroads/hyperglass/tree/v0
 # Custom CSS
 extra_css:
   - 'stylesheets/extra.css'

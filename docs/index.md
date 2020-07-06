@@ -1,12 +1,10 @@
 <img src="assets/hyperglass-dark.png" width=300/>
 
-# Version 1.0
+!!! info "Version 1.0"
+    These docs are for the original release of hyperglass (now called v0). Following the positive response hyperglass v0, version 1.0 of hyperglass has been in development for nearly a year, with an active, but quiet, public beta since March 2020. Version 1.0 features significant backend performance and security improvements, a brand new even more modern UI, built-in support for more Network Operating Systems, and much more.
 
-**These docs are for the original release of hyperglass (now called v0)**.
+    **If you're considering hyperglass for your network, or are still using v0, please check out the [v1.0.0 repository](https://github.com/checktheroads/hyperglass) or the [new docs site](https://hyperglass.io)**.
 
-Following the positive response hyperglass v0, version 1.0 of hyperglass has been in development for nearly a year, with an active, but quiet, public beta since March 2020. Version 1.0 features significant backend performance and security improvements, a brand new even more modern UI, built-in support for more Network Operating Systems, and much more.
-
-**If you're considering hyperglass for your network, or are still using v0, please check out the [v1.0.0 repository](https://github.com/checktheroads/hyperglass) or the [new docs site](https://hyperglass.io)**.
 
 # What is hyperglass?
 
