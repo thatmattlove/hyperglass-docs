@@ -3,10 +3,10 @@ site_author: 'checktheroads | Matt Love'
 site_url: 'https://hyperglass.readthedocs.io'
 copyright: ''
 nav:
-    - Home: 'index.md'
-    - Contributing: 'contributing.md'
-    - Screenshots: 'screenshots.md'
-    - Installation & Configuration:
+  - Home: 'index.md'
+  - Contributing: 'contributing.md'
+  - Screenshots: 'screenshots.md'
+  - Installation & Configuration:
       - '1. Download': 'installation/download.md'
       - '2. Install Dependencies': 'installation/dependencies.md'
       - '3. Verify': 'installation/verify.md'
@@ -17,11 +17,11 @@ nav:
       - '8. HTTP/WSGI': 'installation/wsgi.md'
       - '9. Systemd Service': 'installation/systemd.md'
       - '10. Reverse Proxy & SSL': 'installation/reverseproxy.md'
-    - 'Operations':
+  - 'Operations':
       - 'Upgrading hyperglass': 'operations/upgrading.md'
       - 'Clear the Cache': 'operations/clear-cache.md'
       - 'Compile Sass': 'operations/compile-sass.md'
-    - Extras:
+  - Extras:
       - 'Monitoring': 'extras/monitoring.md'
       - 'Securing Router Access': 'extras/securing-router-access.md'
       - 'Supported Device Types': 'extras/supported-device-types.md'
@@ -31,14 +31,14 @@ theme:
   feature:
     tabs: true
   logo: 'assets/hyperglass-favicon.svg'
-#    icon: 'visibility'
+  # icon: 'visibility'
   favicon: 'assets/favicon.ico'
   palette:
     primary: 'white'
     accent: 'teal'
   font:
     text: 'Nunito'
-    code: 'Fira Mono'
+    code: 'Fira Code'
 # Extensions
 markdown_extensions:
   - admonition
@@ -51,7 +51,7 @@ markdown_extensions:
 extra:
   social:
     - type: 'github'
-      link: 'https://github.com/checktheroads/hyperglass'
+      link: 'https://github.com/checktheroads/hyperglass/tree/v0'
 # Custom CSS
 extra_css:
   - 'stylesheets/extra.css'
